@@ -10,7 +10,7 @@ Easy use Berkeley DB on top of nark-serialization
 
 	// create DB and insert data
 	DbEnv env(0);
-	m_env.open("db", DB_CREATE|DB_INIT_MPOOL, 0);
+	env.open("db", DB_CREATE|DB_INIT_MPOOL, 0);
 	nark::dbmap<unsigned, SomeType>      id_to_val(&env, "id_to_val");
 	nark::kmapdset<dbt_string, SomeType> name_to_vec(&evn, "name_to_vec");
 	SomeType val1, val2;
