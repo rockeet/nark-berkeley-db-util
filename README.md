@@ -33,7 +33,7 @@ Easy use Berkeley DB on top of nark-serialization
 
 In the code snippet, `SomeType` is a type which support [nark-serialization](https://github.com/rockeet/nark-serialization/blob/master/README.md#quick-start).
 
-`dbmap<Key, Value>` is like `std::map<Key, Value>`.
+`dbmap<Key, Value>` is like `std::map<Key, Value>`<br/>
 `kmapdset<Key, Value>` is like `std::map<Key, vector<Value> >`
 
 ## More
