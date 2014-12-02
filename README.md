@@ -36,5 +36,7 @@ In the code snippet, `SomeType` is a type which support [nark-serialization](htt
 `dbmap<Key, Value>` is like `std::map<Key, Value>`<br/>
 `kmapdset<Key, Value>` is like `std::map<Key, vector<Value> >`
 
+Using berkeley db raw api, you need to manually serialize your data/objects, by using `nark-berkeley-db-util`, this work would be done automatically, then you just focus your attention to the real work.
+
 ## More
 To be written...
