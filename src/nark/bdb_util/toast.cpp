@@ -5,7 +5,7 @@
 
 namespace nark {
 
-class FEBIRD_DLL_EXPORT MMS_HugeChunkAlloc : public PersistentAllocator_LL::hc_alloc_t
+class NARK_DLL_EXPORT MMS_HugeChunkAlloc : public PersistentAllocator_LL::hc_alloc_t
 {
 	MemMapStream* mms;
 public:

@@ -19,7 +19,7 @@ class DbEnv; // forward declare
 
 namespace nark {
 
-class FEBIRD_DLL_EXPORT ToastBlob
+class NARK_DLL_EXPORT ToastBlob
 {
 	DECLARE_NONE_COPYABLE_CLASS(ToastBlob)
 public:

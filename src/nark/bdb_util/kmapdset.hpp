@@ -20,7 +20,7 @@
 
 namespace nark {
 
-class FEBIRD_DLL_EXPORT kmapdset_iterator_impl_base : public RefCounter
+class NARK_DLL_EXPORT kmapdset_iterator_impl_base : public RefCounter
 {
 public:
 	class kmapdset_base* m_owner;
@@ -54,7 +54,7 @@ public:
 	bool remove(const char* func);
 };
 
-class FEBIRD_DLL_EXPORT kmapdset_base
+class NARK_DLL_EXPORT kmapdset_base
 {
 	DECLARE_NONE_COPYABLE_CLASS(kmapdset_base)
 
@@ -117,7 +117,7 @@ class kmapdset_iterator :
 		{
 			Impl* p = new Impl(m_impl->m_owner);
 			m_impl->m_ret = m_impl->m_curp->dup(m_impl->m_curp, &p->m_curp, DB_POSITION);
-			FEBIRD_RT_assert(0 == m_impl->m_ret, std::runtime_error);
+			NARK_RT_assert(0 == m_impl->m_ret, std::runtime_error);
 			m_impl.reset(p);
 		}
 	}
@@ -226,7 +226,7 @@ protected:
 			PortableDataInput<MinMemIO> iData;
 			iData.set(data);
 			iData >> x;
-			FEBIRD_RT_assert(iData.diff(data) == size, std::logic_error);
+			NARK_RT_assert(iData.diff(data) == size, std::logic_error);
 			m_kdv.second.push_back(x);
 		}
 		virtual void load_key1(void* data, size_t size)
@@ -234,7 +234,7 @@ protected:
 			PortableDataInput<MemIO> iKey1;
 			iKey1.set(data, size);
 			iKey1 >> m_kdv.first;
-			FEBIRD_RT_assert(iKey1.diff(data) == size, std::logic_error);
+			NARK_RT_assert(iKey1.diff(data) == size, std::logic_error);
 		}
 		virtual void save_key1(PortableDataOutput<AutoGrownMemIO>& oKey1)
 		{

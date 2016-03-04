@@ -82,7 +82,7 @@ dbmap_iterator_impl_base::~dbmap_iterator_impl_base()
 
 void dbmap_iterator_impl_base::advance(u_int32_t direction_flag, const char* func)
 {
-	FEBIRD_RT_assert(0 == m_ret, std::logic_error);
+	NARK_RT_assert(0 == m_ret, std::logic_error);
 	DBT tk; memset(&tk, 0, sizeof(DBT));
 	DBT td; memset(&td, 0, sizeof(DBT));
 	m_ret = m_curp->get(m_curp, &tk, &td, direction_flag);
@@ -107,7 +107,7 @@ void dbmap_iterator_impl_base::advance(u_int32_t direction_flag, const char* fun
  */
 void dbmap_iterator_impl_base::update(const void* d, const char* func)
 {
-	FEBIRD_RT_assert(0 == m_ret, std::logic_error);
+	NARK_RT_assert(0 == m_ret, std::logic_error);
 	PortableDataOutput<AutoGrownMemIO> oKey1, oData;
 	this->save_key(oKey1);
 	m_owner->save_val(oData, d);
@@ -125,7 +125,7 @@ void dbmap_iterator_impl_base::update(const void* d, const char* func)
 
 void dbmap_iterator_impl_base::remove(const char* func)
 {
-	FEBIRD_RT_assert(0 == m_ret, std::logic_error);
+	NARK_RT_assert(0 == m_ret, std::logic_error);
 	int ret = m_curp->del(m_curp, 0);
 	if (0 != ret)
 	{

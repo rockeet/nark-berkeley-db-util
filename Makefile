@@ -21,7 +21,7 @@ endif
 
 BRAIN_DEAD_RE2_INC = -I3rdparty/re2/re2 -I3rdparty/re2/util
 
-FEBIRD_INC := -Isrc -I../nark-serialization/src -I../nark-bone/src
+NARK_INC := -Isrc -I../nark-serialization/src -I../nark-bone/src
 
 include ${BUILD_ROOT}/env.mk
 
@@ -87,7 +87,7 @@ DEFS := -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE
 override CFLAGS   += ${DEFS}
 override CXXFLAGS += ${DEFS}
 
-override INCS := ${FEBIRD_INC} ${INCS}
+override INCS := ${NARK_INC} ${INCS}
 
 ifeq (, $(findstring ${BOOST_INC}, ${INCS} /usr/include /usr/local/include))
   override INCS += -I${BOOST_INC}
@@ -191,28 +191,28 @@ depends : ${alldep}
 
 ${ddir}/%.o: %.cpp
 	@echo file: $< "->" $@
-	@echo FEBIRD_INC=${FEBIRD_INC}
+	@echo NARK_INC=${NARK_INC}
 	@echo BOOST_INC=${BOOST_INC} BOOST_SUFFIX=${BOOST_SUFFIX}
 	mkdir -p $(dir $@)
 	${CXX} ${CXX_STD} ${CPU} -c ${DBG_FLAGS} ${CXXFLAGS} ${INCS} $< -o $@
 
 ${rdir}/%.o: %.cpp
 	@echo file: $< "->" $@
-	@echo FEBIRD_INC=${FEBIRD_INC}
+	@echo NARK_INC=${NARK_INC}
 	@echo BOOST_INC=${BOOST_INC} BOOST_SUFFIX=${BOOST_SUFFIX}
 	mkdir -p $(dir $@)
 	${CXX} ${CXX_STD} ${CPU} -c ${RLS_FLAGS} ${CXXFLAGS} ${INCS} $< -o $@
 
 ${ddir}/%.o: %.cc
 	@echo file: $< "->" $@
-	@echo FEBIRD_INC=${FEBIRD_INC}
+	@echo NARK_INC=${NARK_INC}
 	@echo BOOST_INC=${BOOST_INC} BOOST_SUFFIX=${BOOST_SUFFIX}
 	mkdir -p $(dir $@)
 	${CXX} ${CXX_STD} ${CPU} -c ${DBG_FLAGS} ${CXXFLAGS} ${INCS} $< -o $@
 
 ${rdir}/%.o: %.cc
 	@echo file: $< "->" $@
-	@echo FEBIRD_INC=${FEBIRD_INC}
+	@echo NARK_INC=${NARK_INC}
 	@echo BOOST_INC=${BOOST_INC} BOOST_SUFFIX=${BOOST_SUFFIX}
 	mkdir -p $(dir $@)
 	${CXX} ${CXX_STD} ${CPU} -c ${RLS_FLAGS} ${CXXFLAGS} ${INCS} $< -o $@

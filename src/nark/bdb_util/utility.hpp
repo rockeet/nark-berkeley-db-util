@@ -70,7 +70,7 @@ public:
 };
 
 
-class FEBIRD_DLL_EXPORT DbTxnGuard
+class NARK_DLL_EXPORT DbTxnGuard
 {
 	DbTxn* m_txn;
 	bool m_aborted;
@@ -111,7 +111,7 @@ public:
 	const DB_TXN *get_const_DB_TXN() const { return m_txn->get_const_DB_TXN(); }
 };
 
-class FEBIRD_DLL_EXPORT DbCursor
+class NARK_DLL_EXPORT DbCursor
 {
 	Dbc* m_cursor;
 

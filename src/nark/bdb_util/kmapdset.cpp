@@ -66,7 +66,7 @@ kmapdset_iterator_impl_base::~kmapdset_iterator_impl_base()
 
 bool kmapdset_iterator_impl_base::next_key(size_t* cnt, const char* func)
 {
-	FEBIRD_RT_assert(0 == m_ret, std::logic_error);
+	NARK_RT_assert(0 == m_ret, std::logic_error);
 	DBT tk1; memset(&tk1, 0, sizeof(DBT));
 	m_ret = m_curp->get(m_curp, &tk1, &m_bulk, DB_NEXT_NODUP);
 	if (0 == m_ret)
@@ -97,7 +97,7 @@ bool kmapdset_iterator_impl_base::next_key(size_t* cnt, const char* func)
 
 void kmapdset_iterator_impl_base::bulk_load(DBT* tk1)
 {
-	FEBIRD_RT_assert(0 == m_ret, std::logic_error);
+	NARK_RT_assert(0 == m_ret, std::logic_error);
 	load_key1(tk1->data, tk1->size);
 	clear_vec();
 	int ret;
@@ -120,7 +120,7 @@ void kmapdset_iterator_impl_base::bulk_load(DBT* tk1)
 
 void kmapdset_iterator_impl_base::increment(const char* func)
 {
-	FEBIRD_RT_assert(0 == m_ret, std::logic_error);
+	NARK_RT_assert(0 == m_ret, std::logic_error);
 	DBT tk1; memset(&tk1, 0, sizeof(DBT));
 	m_ret = m_curp->get(m_curp, &tk1, &m_bulk, DB_NEXT_NODUP|DB_MULTIPLE);
 	if (0 == m_ret)
@@ -137,7 +137,7 @@ void kmapdset_iterator_impl_base::increment(const char* func)
 
 void kmapdset_iterator_impl_base::decrement(const char* func)
 {
-	FEBIRD_RT_assert(0 == m_ret, std::logic_error);
+	NARK_RT_assert(0 == m_ret, std::logic_error);
 	DBT tk1; memset(&tk1, 0, sizeof(DBT));
 	m_ret = m_curp->get(m_curp, &tk1, &m_bulk, DB_PREV_NODUP);
 	if (0 == m_ret)
@@ -206,7 +206,7 @@ bool kmapdset_iterator_impl_base::find_pos(const void* k1, const void* k2, bool 
  */
 bool kmapdset_iterator_impl_base::insert(const void* d, const char* func)
 {
-	FEBIRD_RT_assert(0 == m_ret || DB_NOTFOUND == m_ret || DB_KEYEXIST == m_ret, std::logic_error);
+	NARK_RT_assert(0 == m_ret || DB_NOTFOUND == m_ret || DB_KEYEXIST == m_ret, std::logic_error);
 	PortableDataOutput<AutoGrownMemIO> oKey1, oData;
 	this->save_key1(oKey1);
 	m_owner->save_data(oData, d);
@@ -231,7 +231,7 @@ bool kmapdset_iterator_impl_base::insert(const void* d, const char* func)
  */
 bool kmapdset_iterator_impl_base::update(const void* d, const char* func)
 {
-	FEBIRD_RT_assert(0 == m_ret, std::logic_error);
+	NARK_RT_assert(0 == m_ret, std::logic_error);
 	PortableDataOutput<AutoGrownMemIO> oKey1, oData;
 	this->save_key1(oKey1);
 	m_owner->save_data(oData, d);
@@ -292,7 +292,7 @@ bool kmapdset_iterator_impl_base::replace(const void* d, const char* func)
 
 bool kmapdset_iterator_impl_base::remove(const void* k2, const char* func)
 {
-	FEBIRD_RT_assert(0 == m_ret, std::logic_error);
+	NARK_RT_assert(0 == m_ret, std::logic_error);
 	PortableDataOutput<AutoGrownMemIO> oKey1, oKey2;
 	this->save_key1(oKey1);
 	m_owner->save_key2(oKey2, k2);
@@ -314,7 +314,7 @@ bool kmapdset_iterator_impl_base::remove(const void* k2, const char* func)
 
 bool kmapdset_iterator_impl_base::remove(const char* func)
 {
-	FEBIRD_RT_assert(0 == m_ret, std::logic_error);
+	NARK_RT_assert(0 == m_ret, std::logic_error);
 	PortableDataOutput<AutoGrownMemIO> oKey1;
 	this->save_key1(oKey1);
 	DBT tk1; memset(&tk1, 0, sizeof(DBT)); tk1.data = oKey1.begin(); tk1.size = oKey1.tell();

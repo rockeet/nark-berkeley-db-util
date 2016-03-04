@@ -19,7 +19,7 @@
 
 namespace nark {
 
-class FEBIRD_DLL_EXPORT dbmap_iterator_impl_base : public RefCounter
+class NARK_DLL_EXPORT dbmap_iterator_impl_base : public RefCounter
 {
 public:
 	class dbmap_base* m_owner;
@@ -42,7 +42,7 @@ public:
 	void remove(const char* func);
 };
 
-class FEBIRD_DLL_EXPORT dbmap_base
+class NARK_DLL_EXPORT dbmap_base
 {
 	DECLARE_NONE_COPYABLE_CLASS(dbmap_base)
 
@@ -87,7 +87,7 @@ class dbmap_iterator :
 			Impl* q = static_cast<Impl*>(m_impl.get());
 			Impl* p = new Impl(q->m_owner);
 			q->m_ret = q->m_curp->dup(q->m_curp, &p->m_curp, DB_POSITION);
-			FEBIRD_RT_assert(0 == q->m_ret, std::runtime_error);
+			NARK_RT_assert(0 == q->m_ret, std::runtime_error);
 			m_impl.reset(p);
 		}
 	}
@@ -174,14 +174,14 @@ protected:
 			PortableDataInput<MemIO> iKey;
 			iKey.set(data, size);
 			iKey >> m_kv.first;
-			FEBIRD_RT_assert(iKey.eof(), std::logic_error);
+			NARK_RT_assert(iKey.eof(), std::logic_error);
 		}
 		virtual void load_val(void* data, size_t size)
 		{
 			PortableDataInput<MinMemIO> iVal;
 			iVal.set(data);
 			iVal >> m_kv.second;
-			FEBIRD_RT_assert(iVal.diff(data) == size, std::logic_error);
+			NARK_RT_assert(iVal.diff(data) == size, std::logic_error);
 		}
 		virtual void save_key(PortableDataOutput<AutoGrownMemIO>& oKey1)
 		{

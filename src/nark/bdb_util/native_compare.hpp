@@ -65,83 +65,83 @@ typedef basic_dbt_string<std::wstring> dbt_wstring;
 extern "C" {
 #endif
 
-FEBIRD_DLL_EXPORT size_t bdb_fixed_key_prefix(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT size_t bdb_common_byte_prefix(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT size_t bdb_fixed_key_prefix(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT size_t bdb_common_byte_prefix(DB *db, const DBT *dbt1, const DBT *dbt2);
 
-FEBIRD_DLL_EXPORT int bdb_compare_uint32(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT int bdb_compare_uint64(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT int bdb_compare_int32(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT int bdb_compare_int64(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_uint32(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_uint64(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_int32(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_int64(DB *db, const DBT *dbt1, const DBT *dbt2);
 
-FEBIRD_DLL_EXPORT int bdb_compare_float(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT int bdb_compare_double(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT int bdb_compare_long_double(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_float(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_double(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_long_double(DB *db, const DBT *dbt1, const DBT *dbt2);
 
-FEBIRD_DLL_EXPORT int bdb_strcmp_nocase(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT int bdb_compare_string(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_strcmp_nocase(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_string(DB *db, const DBT *dbt1, const DBT *dbt2);
 
 #ifdef __cplusplus
 
 //! HAS NO string length saved
 // DataFormat: var_int + string_content
-FEBIRD_DLL_EXPORT int bdb_cmp_var_uint32_str(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_cmp_var_uint32_str(DB *db, const DBT *dbt1, const DBT *dbt2);
 
 //! HAS string length saved
 // DataFormat: var_int_strlen + string_content + var_int
-FEBIRD_DLL_EXPORT int bdb_cmp_str_var_uint32(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_cmp_str_var_uint32(DB *db, const DBT *dbt1, const DBT *dbt2);
 
-FEBIRD_DLL_EXPORT int bdb_mash_strcmp_case(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT int bdb_mash_strcmp_nocase(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT int bdb_locale_mash_strcmp_case(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT int bdb_locale_mash_strcmp_nocase(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_mash_strcmp_case(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_mash_strcmp_nocase(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_locale_mash_strcmp_case(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_locale_mash_strcmp_nocase(DB *db, const DBT *dbt1, const DBT *dbt2);
 
-FEBIRD_DLL_EXPORT int bdb_locale_strcmp_case(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT int bdb_locale_strcmp_nocase(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_locale_strcmp_case(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_locale_strcmp_nocase(DB *db, const DBT *dbt1, const DBT *dbt2);
 
-FEBIRD_DLL_EXPORT int bdb_compare_var_uint32(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT int bdb_compare_var_uint64(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT int bdb_compare_var_int32(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT int bdb_compare_var_int64(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_var_uint32(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_var_uint64(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_var_int32(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_var_int64(DB *db, const DBT *dbt1, const DBT *dbt2);
 
-FEBIRD_DLL_EXPORT int bdb_compare_var_uint32_n(DB *db, const DBT *dbt1, const DBT *dbt2, int n);
-FEBIRD_DLL_EXPORT int bdb_compare_var_uint64_n(DB *db, const DBT *dbt1, const DBT *dbt2, int n);
-FEBIRD_DLL_EXPORT int bdb_compare_var_int32_n(DB *db, const DBT *dbt1, const DBT *dbt2, int n);
-FEBIRD_DLL_EXPORT int bdb_compare_var_int64_n(DB *db, const DBT *dbt1, const DBT *dbt2, int n);
+NARK_DLL_EXPORT int bdb_compare_var_uint32_n(DB *db, const DBT *dbt1, const DBT *dbt2, int n);
+NARK_DLL_EXPORT int bdb_compare_var_uint64_n(DB *db, const DBT *dbt1, const DBT *dbt2, int n);
+NARK_DLL_EXPORT int bdb_compare_var_int32_n(DB *db, const DBT *dbt1, const DBT *dbt2, int n);
+NARK_DLL_EXPORT int bdb_compare_var_int64_n(DB *db, const DBT *dbt1, const DBT *dbt2, int n);
 
-FEBIRD_DLL_EXPORT size_t bdb_prefix_var_uint32_n(DB *db, const DBT *dbt1, const DBT *dbt2, int n);
-FEBIRD_DLL_EXPORT size_t bdb_prefix_var_uint64_n(DB *db, const DBT *dbt1, const DBT *dbt2, int n);
-FEBIRD_DLL_EXPORT size_t bdb_prefix_var_int32_n(DB *db, const DBT *dbt1, const DBT *dbt2, int n);
-FEBIRD_DLL_EXPORT size_t bdb_prefix_var_int64_n(DB *db, const DBT *dbt1, const DBT *dbt2, int n);
+NARK_DLL_EXPORT size_t bdb_prefix_var_uint32_n(DB *db, const DBT *dbt1, const DBT *dbt2, int n);
+NARK_DLL_EXPORT size_t bdb_prefix_var_uint64_n(DB *db, const DBT *dbt1, const DBT *dbt2, int n);
+NARK_DLL_EXPORT size_t bdb_prefix_var_int32_n(DB *db, const DBT *dbt1, const DBT *dbt2, int n);
+NARK_DLL_EXPORT size_t bdb_prefix_var_int64_n(DB *db, const DBT *dbt1, const DBT *dbt2, int n);
 
-FEBIRD_DLL_EXPORT int bdb_compare_var_uint32_2(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT int bdb_compare_var_uint64_2(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT int bdb_compare_var_int32_2(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT int bdb_compare_var_int64_2(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_var_uint32_2(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_var_uint64_2(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_var_int32_2(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_var_int64_2(DB *db, const DBT *dbt1, const DBT *dbt2);
 
-FEBIRD_DLL_EXPORT size_t bdb_prefix_var_uint32_2(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT size_t bdb_prefix_var_uint64_2(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT size_t bdb_prefix_var_int32_2(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT size_t bdb_prefix_var_int64_2(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT size_t bdb_prefix_var_uint32_2(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT size_t bdb_prefix_var_uint64_2(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT size_t bdb_prefix_var_int32_2(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT size_t bdb_prefix_var_int64_2(DB *db, const DBT *dbt1, const DBT *dbt2);
 
-FEBIRD_DLL_EXPORT int bdb_compare_var_uint32_3(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT int bdb_compare_var_uint64_3(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT int bdb_compare_var_int32_3(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT int bdb_compare_var_int64_3(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_var_uint32_3(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_var_uint64_3(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_var_int32_3(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_var_int64_3(DB *db, const DBT *dbt1, const DBT *dbt2);
 
-FEBIRD_DLL_EXPORT size_t bdb_prefix_var_uint32_3(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT size_t bdb_prefix_var_uint64_3(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT size_t bdb_prefix_var_int32_3(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT size_t bdb_prefix_var_int64_3(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT size_t bdb_prefix_var_uint32_3(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT size_t bdb_prefix_var_uint64_3(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT size_t bdb_prefix_var_int32_3(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT size_t bdb_prefix_var_int64_3(DB *db, const DBT *dbt1, const DBT *dbt2);
 
-FEBIRD_DLL_EXPORT int bdb_compare_var_uint32_4(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT int bdb_compare_var_uint64_4(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT int bdb_compare_var_int32_4(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT int bdb_compare_var_int64_4(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_var_uint32_4(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_var_uint64_4(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_var_int32_4(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT int bdb_compare_var_int64_4(DB *db, const DBT *dbt1, const DBT *dbt2);
 
-FEBIRD_DLL_EXPORT size_t bdb_prefix_var_uint32_4(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT size_t bdb_prefix_var_uint64_4(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT size_t bdb_prefix_var_int32_4(DB *db, const DBT *dbt1, const DBT *dbt2);
-FEBIRD_DLL_EXPORT size_t bdb_prefix_var_int64_4(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT size_t bdb_prefix_var_uint32_4(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT size_t bdb_prefix_var_uint64_4(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT size_t bdb_prefix_var_int32_4(DB *db, const DBT *dbt1, const DBT *dbt2);
+NARK_DLL_EXPORT size_t bdb_prefix_var_int64_4(DB *db, const DBT *dbt1, const DBT *dbt2);
 
 } // extern "C"
 
@@ -177,24 +177,24 @@ inline bt_compare_fcn_type bdb_auto_bt_compare(TT_PAIR(nark::var_uint64_t)*) { r
 inline bt_compare_fcn_type bdb_auto_bt_compare(TT_PAIR(nark::var_int32_t)*) { return &bdb_compare_var_int32_2; }
 inline bt_compare_fcn_type bdb_auto_bt_compare(TT_PAIR(nark::var_int64_t)*) { return &bdb_compare_var_int64_2; }
 
-#define FEBIRD_TUPLE_2(t) boost::tuples::tuple<t,t >
-#define FEBIRD_TUPLE_3(t) boost::tuples::tuple<t,t,t >
-#define FEBIRD_TUPLE_4(t) boost::tuples::tuple<t,t,t,t >
+#define NARK_TUPLE_2(t) boost::tuples::tuple<t,t >
+#define NARK_TUPLE_3(t) boost::tuples::tuple<t,t,t >
+#define NARK_TUPLE_4(t) boost::tuples::tuple<t,t,t,t >
 
-inline bt_compare_fcn_type bdb_auto_bt_compare(FEBIRD_TUPLE_2(nark::var_uint32_t)*) { return &bdb_compare_var_uint32_2; }
-inline bt_compare_fcn_type bdb_auto_bt_compare(FEBIRD_TUPLE_2(nark::var_uint64_t)*) { return &bdb_compare_var_uint64_2; }
-inline bt_compare_fcn_type bdb_auto_bt_compare(FEBIRD_TUPLE_2(nark::var_int32_t)*) { return &bdb_compare_var_int32_2; }
-inline bt_compare_fcn_type bdb_auto_bt_compare(FEBIRD_TUPLE_2(nark::var_int64_t)*) { return &bdb_compare_var_int64_2; }
+inline bt_compare_fcn_type bdb_auto_bt_compare(NARK_TUPLE_2(nark::var_uint32_t)*) { return &bdb_compare_var_uint32_2; }
+inline bt_compare_fcn_type bdb_auto_bt_compare(NARK_TUPLE_2(nark::var_uint64_t)*) { return &bdb_compare_var_uint64_2; }
+inline bt_compare_fcn_type bdb_auto_bt_compare(NARK_TUPLE_2(nark::var_int32_t)*) { return &bdb_compare_var_int32_2; }
+inline bt_compare_fcn_type bdb_auto_bt_compare(NARK_TUPLE_2(nark::var_int64_t)*) { return &bdb_compare_var_int64_2; }
 
-inline bt_compare_fcn_type bdb_auto_bt_compare(FEBIRD_TUPLE_3(nark::var_uint32_t)*) { return &bdb_compare_var_uint32_3; }
-inline bt_compare_fcn_type bdb_auto_bt_compare(FEBIRD_TUPLE_3(nark::var_uint64_t)*) { return &bdb_compare_var_uint64_3; }
-inline bt_compare_fcn_type bdb_auto_bt_compare(FEBIRD_TUPLE_3(nark::var_int32_t)*) { return &bdb_compare_var_int32_3; }
-inline bt_compare_fcn_type bdb_auto_bt_compare(FEBIRD_TUPLE_3(nark::var_int64_t)*) { return &bdb_compare_var_int64_3; }
+inline bt_compare_fcn_type bdb_auto_bt_compare(NARK_TUPLE_3(nark::var_uint32_t)*) { return &bdb_compare_var_uint32_3; }
+inline bt_compare_fcn_type bdb_auto_bt_compare(NARK_TUPLE_3(nark::var_uint64_t)*) { return &bdb_compare_var_uint64_3; }
+inline bt_compare_fcn_type bdb_auto_bt_compare(NARK_TUPLE_3(nark::var_int32_t)*) { return &bdb_compare_var_int32_3; }
+inline bt_compare_fcn_type bdb_auto_bt_compare(NARK_TUPLE_3(nark::var_int64_t)*) { return &bdb_compare_var_int64_3; }
 
-inline bt_compare_fcn_type bdb_auto_bt_compare(FEBIRD_TUPLE_4(nark::var_uint32_t)*) { return &bdb_compare_var_uint32_4; }
-inline bt_compare_fcn_type bdb_auto_bt_compare(FEBIRD_TUPLE_4(nark::var_uint64_t)*) { return &bdb_compare_var_uint64_4; }
-inline bt_compare_fcn_type bdb_auto_bt_compare(FEBIRD_TUPLE_4(nark::var_int32_t)*) { return &bdb_compare_var_int32_4; }
-inline bt_compare_fcn_type bdb_auto_bt_compare(FEBIRD_TUPLE_4(nark::var_int64_t)*) { return &bdb_compare_var_int64_4; }
+inline bt_compare_fcn_type bdb_auto_bt_compare(NARK_TUPLE_4(nark::var_uint32_t)*) { return &bdb_compare_var_uint32_4; }
+inline bt_compare_fcn_type bdb_auto_bt_compare(NARK_TUPLE_4(nark::var_uint64_t)*) { return &bdb_compare_var_uint64_4; }
+inline bt_compare_fcn_type bdb_auto_bt_compare(NARK_TUPLE_4(nark::var_int32_t)*) { return &bdb_compare_var_int32_4; }
+inline bt_compare_fcn_type bdb_auto_bt_compare(NARK_TUPLE_4(nark::var_int64_t)*) { return &bdb_compare_var_int64_4; }
 
 #endif // __cplusplus
 
